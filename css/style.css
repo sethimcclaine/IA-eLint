@@ -1,0 +1,217 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'bangla_mnregular';
+    src: url('../fonts/banglamn-webfont.eot');
+    src: url('../fonts/banglamn-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/banglamn-webfont.woff2') format('woff2'),
+         url('../fonts/banglamn-webfont.woff') format('woff'),
+         url('../fonts/banglamn-webfont.ttf') format('truetype'),
+         url('../fonts/banglamn-webfont.svg#bangla_mnregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: bangla_mnregular;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+.wrapper {
+	background: url(../images/background.png) no-repeat top center;
+	width: 1024px;
+	height: 768px;
+	background-size: 1024px 768px;
+	position: relative;
+}
+
+/* DIAGNOSIS COLUMN */
+div.diagnosiscolumn {
+	position: absolute;
+	top: 225px;
+	left: 138px;
+}
+
+.diagnosiscolumn ul li {
+	border: none;
+	text-align: center;
+	font-family: bangla_mnregular;
+	width: 92px;
+	padding: 15px 0 10px 0;
+	font-size: 24px;
+	color: #333;
+	background: none;
+	margin-bottom: 8px;
+}
+
+/* PATIENTS COLUMN */
+div.patientcolumn {
+	position: absolute;
+	top: 225px;
+	left: 317px;
+}
+
+.patientcolumn ul li {
+	margin-bottom: 8px;
+}
+
+.patientcolumn ul li input {
+	border: none;
+	text-align: center;
+	font-family: bangla_mnregular;
+	width: 92px;
+	padding: 15px 0 10px 0;
+	font-size: 24px;
+	color: #15520e;
+	background: none;
+}
+
+/* REVENUE COLUMN */
+div.revenuecolumn {
+	position: absolute;
+	top: 225px;
+	left: 491px;
+}
+
+.revenuecolumn ul li {
+	margin-bottom: 8px;
+}
+
+.revenuecolumn ul li input {
+	border: none;
+	text-align: center;
+	font-family: bangla_mnregular;
+	width: 92px;
+	padding: 15px 0 10px 0;
+	font-size: 24px;
+	color: #333;
+	background: none;
+}
+
+/* PROCEDURE COLUMN */
+div.procedurecolumn {
+	position: absolute;
+	top: 568px;
+	left: 210px;
+}
+
+.procedurecolumn ul li {
+	margin-bottom: 9px;
+}
+
+.procedurecolumn ul li input {
+	border: none;
+	text-align: center;
+	font-family: bangla_mnregular;
+	width: 147px;
+	padding: 12px 0 5px 0;
+	font-size: 28px;
+	color: #15520e;
+	background: none;
+}
+
+/* PIE COLUMN */
+div.piecolumn {
+	position: absolute;
+	top: 166px;
+	right: 231px;
+}
+
+.piecolumn ul li {
+	margin-bottom: 12px;
+}
+
+.piecolumn ul li input {
+	border: none;
+	text-align: center;
+	font-family: bangla_mnregular;
+	width: 73px;
+	padding: 12px 0 9px 0;
+	font-size: 19px;
+	color: #fff;
+	background: none;
+}
+
+.piecolumn ul li.managedcare input {
+	color: #a0a0a0;
+	margin-top: -2px;
+}
+
+.piecolumn ul li.cash input {
+	margin-top: -2px;
+}
+
+/* TOTAL PIE */
+div.totalpie {
+	position: absolute;
+	top: 391px;
+	right: 236px;
+}
+.totalpie input {
+	border: none;
+	text-align: right;
+	font-family: bangla_mnregular;
+	width: 73px;
+	padding: 7px 0 9px 0;
+	font-size: 23px;
+	color: #a0a0a0;
+	background: none;
+}
+.totalpie sup {
+	color: #a0a0a0;
+	margin-left: 2px;
+}
+/* TOTAL COLUMN */
+div.totalcolumn {
+	position: absolute;
+	top: 597px;
+	left: 420px;
+}
+
+.totalcolumn input {
+	border: none;
+	text-align: center;
+	font-family: bangla_mnregular;
+	width: 250px;
+	padding: 6px 0 5px 0;
+	font-size: 37px;
+	color: #15520e;
+	background: none;
+}
+
+/* PIE CHART */
+.mmmmmmpie {
+	position: absolute;
+	bottom: 50px; /*68px;*/
+	right: 30px; /*60px;*/
+	display: block;
+	width: 300px; /*242px;*/
+	height: 300px; /*242px;*/
+}
+.pieplate {
+	display: block;
+	width: 240px;
+	height: 240px;
+	border: 2px solid #e2e2e2;
+	border-radius: 300px;
+	margin: auto;
+}
+.pie {
+	display: block;
+	background: #179CC3;
+	width: 200px;
+	height: 200px;
+	border: 10px solid #fff;
+	border-radius: 300px;
+	margin: 10px auto;
+}

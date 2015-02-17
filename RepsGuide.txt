@@ -1,0 +1,258 @@
+// This is the markup that is generated around your widget by the Reps application
+// You shouldn't have to ever edit it
+// This example has two widgets and an image added to it via the cms
+<div class="slide" id="slide_123412341234">
+	<div class="contentWidget" is="contentWidget_1">
+		<!-- your code for widget 1-->
+	</div>
+	<div class="contentWidget" is="contentWidget_2">
+		<!-- your code for widget 2-->
+	</div>
+	<div class="contentImage" is="contentImage_1"></div>
+</div>
+
+// jquery-1.9.0.js is included by default
+
+// Here is an example of a fake widget
+
+// This goes in the left pane of the editor
+// For this example, we have created a snippet called mySnippet that has the code:
+// [1,2,3,4,5,6];
+// alert('Hello');
+// 
+// Also, we have uplaoded an image to the slide with id 'abcde12345'
+
+<div>
+	<h1>Hello world</h1>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div id="myContainer"></div>
+</div>
+<script>
+	var myArray = [RepsSnippet:mySnippet]
+
+	// Gets fired when slide is shown
+	$('#slide_<%= sideID %>').on('collection:slideActivated', function() {
+		$('#slide_<%= sideID %> #myContainer').css('background-image', 'url("<resource>abcde12345</resource>")');
+	});
+
+	Reps.execute({
+		method: 'sendAnalyticsEvent',
+		data: {
+			category: 'myEvent',
+			action: 'clickedIt',
+			label: 'appEvent',
+			value: 1
+		}
+	});
+</script>
+
+// Our css on the right pane looks like this
+#slide_<%= slideID %> h1 {
+	color: #ccc;
+	background-image: url('<resource>abcde12345</resource>');
+}
+
+// When this slide is loaded in the app, this is what this code becomes:
+
+<div>
+	<h1>Hello world</h1>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<div id="myContainer"></div>
+</div>
+<script>
+	var myArray = [1,2,3,4,5,6];
+	alert('Hello');
+
+	// Gets fired when slide is shown
+	$('#slide_123412341234').on('collection:slideActivated', function() {
+		$('#slide_123412341234 #myContainer').css('background-image', 'url("path/to/abcde12345.png")');
+	});
+
+	Reps.execute({
+		method: 'sendAnalyticsEvent',
+		data: {
+			category: 'myEvent',
+			action: 'clickedIt',
+			label: 'appEvent',
+			value: 1
+		}
+	});
+</script>
+
+// And the css becomes
+#slide_123412341234 h1 {
+	color: #ccc;
+	background-image: url('path/to/abcde12345.png');
+}
+
+// Note how the javascript was just injected inline.
+// The collection:slideActivated event is fired when the slide is shown, otherwise all caode is executed when the topic
+// loads. In this example, when the topic was opened, it would alert 'Hello'; not when the sldie was shown
+
+If you would like to prevent event propagation, you can catch each of these events before they bubble
+$('#slide_<%= sideID %>').on('touchstart', function(e) {
+	// do stuff here
+	e.stopPropagation();
+});
+
+$('#slide_<%= sideID %>').on('touchmove', function(e) {
+	// do stuff here
+	e.stopPropagation();
+});
+
+$('#slide_<%= sideID %>').on('touchend', function(e) {
+	// do stuff here
+	e.stopPropagation();
+});
+
+// Im not going to go into event propagation as it goes beyone the scope of this guide. Google it for more info
+
+// You also have access to native iOS methods. These are called with Reps.execute();
+// They are as follows:
+
+sendAnalyticsEvent
+	params: 
+		category,
+		action,
+		label,
+		value
+
+sendAnalyticsView
+	params: 
+		name
+hasProperty
+	params: 
+		property
+
+listProperties
+	params: none
+
+removeProperty
+	params: 
+		property
+
+getBool
+	params: 
+		property
+
+getDouble
+	params: 
+		property
+
+getInt
+	params: 
+		property
+
+getList
+	params: 
+		property
+
+getObject
+	params: 
+		property
+
+getString
+	params: 
+		property
+
+setBool
+	params: 
+		property,
+		value
+setDouble
+	params: 
+		property,
+		value
+setInt
+	params: 
+		property,
+		value
+setList
+	params: 
+		property,
+		value
+setObject
+	params: 
+		property,
+		value
+setString
+	params: 
+		property,
+		value
+
+createEmailDialogView
+	params:
+		toRecipients: '',
+		ccRecipients: '',
+		bccRecipients: '',
+		subject: '',
+		messageBody: '',
+		html: '', // Can be html formatted
+		attachments: //reps resource identifier i.e <resource>1256345127</resource>
+
+createScrollableDialogView
+	params: 
+		modal: true || false,
+		scroll: ,
+		width: integer in px,
+		height: integer in px,
+		top: integer in px,
+		left: integer in px,
+		closeWidth: integer in px,
+		closeHeight: integer in px,
+		closeTop: integer in px,
+		closeLeft: integer in px,
+		images: [
+			'<resource>63451</resource>',
+			'<resource>12563</resource>',
+			'<resource>12127</resource>',
+			'<resource>12237</resource>'
+		]
+
+createModalDialogView
+	params: 
+		modal: true || false,
+		width: integer in px,
+		height: integer in px,
+		top: integer in px,
+		left: integer in px,
+		backgroundImage: //reps resource identifier i.e '<resource>1256345127</resource>',
+		closeWidth: integer in px,
+		closeHeight: integer in px,
+		closeTop: integer in px,
+		closeLeft: integer in px,
+		closeImage:  //reps resource identifier i.e '<resource>1256345127</resource>'
+
+openExternalUrl
+	params:
+		url
+
+
+// All of the Reps methods should fire a callback when they return from the Application code
+// Most only use the onResponse callback
+// for example: getInt
+// We can use this method to get an integer that we set in the apps persistent storage
+
+Reps.execute({
+	method: 'getInt',
+	data: {
+		property: 'foo'
+	},
+	callbacks: {
+		onResponse: function(e) {
+			alert(e.data);
+		}
+	}
+});

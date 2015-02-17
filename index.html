@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>eLint ROI Calculator</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="lib/jquery/jquery-2.1.3.min.js"></script>
+    <script src="lib/highcharts/highcharts.js"></script>
+    <script src="js/index.js"> </script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="diagnosiscolumn">
+			<ul>
+				<li>715.96</li>
+				<li>726.32
+				<li>836.2</li>
+				<li>726.13</li>
+				<li>726.71</li>
+			</li>
+			</ul>
+		</div>
+		<div class="patientcolumn">
+			<ul>
+				<li><input type="number" value="200"></li>
+				<li><input type="number" value="60"></li>
+				<li><input type="number" value="80"></li>
+				<li><input type="number" value="50"></li>
+				<li><input type="number" value="30"></li>
+			</ul>
+		</div>
+		<div class="revenuecolumn">
+			<ul>
+				<li><input value="0" readonly></li>
+				<li><input value="0" readonly></li>
+				<li><input value="0" readonly></li>
+				<li><input value="0" readonly></li>
+				<li><input value="0" readonly></li>
+			</ul>
+		</div>
+		<div class="procedurecolumn">
+			<ul>
+				<li class="cost"><input type="number" value="3000"></li>
+				<li class="participation"><input type="number" value="10"></li>
+			</ul>
+		</div>
+		<div class="piecolumn">
+			<ul>
+				<li class="medicare"><input type="number" value="30"></li>
+				<li class="ppo"><input type="number" value="50"></li>
+				<li class="managedcare"><input type="number" value="15"></li>
+				<li class="cash"><input type="number" value="5"></li>
+			</ul>
+		</div>
+		<div class="totalpie">
+			<input value="100" readonly><sup>%</sup>
+		</div>
+		<div class="totalcolumn">
+			<input value="9,999,999" readonly>
+		</div>
+		<div class="mmmmmmpie">
+		</div>
+	</div>
+</body>
+</html>
+
